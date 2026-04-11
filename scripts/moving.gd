@@ -3,7 +3,7 @@ extends CharacterBody2D
 const SPEED = 300.0
 const RUN_SPEED = 600.0
 const ACCELERATION = 1200.0
-const FRICTION = 500.0
+const FRICTION = 750.0
 
 const DASH_SPEED = 1000.0
 const DASH_TIME = 0.2

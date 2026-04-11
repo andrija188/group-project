@@ -6,17 +6,15 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
 size = Vector2(128, 128)
 
-[node name="Player" type="Node2D" unique_id=2109339258]
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=601457641]
+[node name="Player" type="CharacterBody2D" unique_id=50151612]
 script = ExtResource("1_0p76x")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=205976234]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=205976234]
 position = Vector2(-7, -1)
 texture = ExtResource("1_7krdm")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=917012071]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=917012071]
 position = Vector2(-7, -1)
 shape = SubResource("RectangleShape2D_g2els")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=762222839]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=762222839]
