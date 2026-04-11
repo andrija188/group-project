@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://c4ovgmgk7uhgp"]
+
+[ext_resource type="Texture2D" uid="uid://bhew6os5cstku" path="res://icon.svg" id="1_o5qli"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wfyh"]
+size = Vector2(83, 1097.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sugp2"]
+size = Vector2(83, 1939.1702)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhfs"]
+size = Vector2(83, 1096.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tbgi4"]
+size = Vector2(83, 1880)
+
+[node name="Main" type="Node2D" unique_id=1322892608]
+
+[node name="Walls" type="Node2D" parent="." unique_id=1653649959]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls" unique_id=815928967]
+position = Vector2(-957, 5.25)
+shape = SubResource("RectangleShape2D_0wfyh")
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/CollisionShape2D" unique_id=1977797850]
+position = Vector2(-0.50000095, -2.7499466)
+scale = Vector2(0.640625, 8.5703125)
+texture = ExtResource("1_o5qli")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls" unique_id=1367153579]
+position = Vector2(17.349487, 503.65567)
+rotation = 1.5699074
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_sugp2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/CollisionShape2D2" unique_id=1713844903]
+position = Vector2(-0.50000095, 0.0002746582)
+scale = Vector2(0.640625, 15.083421)
+texture = ExtResource("1_o5qli")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls" unique_id=2101363662]
+position = Vector2(953, -7.25)
+shape = SubResource("RectangleShape2D_jyhfs")
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/CollisionShape2D3" unique_id=2138936346]
+position = Vector2(-0.50000095, -4.250023)
+scale = Vector2(0.640625, 8.398437)
+texture = ExtResource("1_o5qli")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls" unique_id=919519007]
+position = Vector2(6, -541)
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_tbgi4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/CollisionShape2D4" unique_id=879420430]
+position = Vector2(-0.50000095, 3.069275)
+scale = Vector2(0.640625, 14.744173)
+texture = ExtResource("1_o5qli")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1338513434]
