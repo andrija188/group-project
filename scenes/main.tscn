@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c4ovgmgk7uhgp"]
 
 [ext_resource type="Texture2D" uid="uid://bhew6os5cstku" path="res://icon.svg" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://r1php38s7w37" path="res://scripts/health_bar.gd" id="2_0wfyh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0wfyh"]
 size = Vector2(83, 1097.5)
@@ -58,3 +59,21 @@ scale = Vector2(0.640625, 14.744173)
 texture = ExtResource("1_o5qli")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1338513434]
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1857761861]
+offset_left = -282.0
+offset_top = -449.0
+offset_right = 296.0
+offset_bottom = -365.0
+value = 100.0
+script = ExtResource("2_0wfyh")
+
+[node name="Button" type="Button" parent="ProgressBar" unique_id=205650832]
+layout_mode = 0
+offset_left = 217.0
+offset_top = 380.0
+offset_right = 353.0
+offset_bottom = 516.0
+text = "HEALTH DOWN"
+
+[connection signal="pressed" from="ProgressBar/Button" to="ProgressBar" method="_on_button_pressed"]
