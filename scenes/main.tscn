@@ -17,7 +17,7 @@ size = Vector2(83, 1096.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tbgi4"]
 size = Vector2(83, 1880)
 
-[node name="Main" type="Node2D" unique_id=1322892608]
+[node name="Main" type="Node2D" unique_id=1322892608 groups=["player"]]
 
 [node name="Walls" type="Node2D" parent="." unique_id=1653649959]
 
