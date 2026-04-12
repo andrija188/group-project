@@ -7,6 +7,7 @@
 size = Vector2(128, 128)
 
 [node name="Player" type="CharacterBody2D" unique_id=1591596082 groups=["player"]]
+disable_mode = 1
 script = ExtResource("1_0p76x")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=205976234]
