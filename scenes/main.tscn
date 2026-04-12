@@ -1,9 +1,9 @@
-[gd_scene format=3 uid="uid://cj47efa1s61qi"]
+[gd_scene format=3 uid="uid://b68r3gapq3rxb"]
 
 [ext_resource type="Texture2D" uid="uid://bhew6os5cstku" path="res://icon.svg" id="1_o5qli"]
-[ext_resource type="Script" uid="uid://r1php38s7w37" path="res://scripts/health_bar.gd" id="2_0wfyh"]
-[ext_resource type="PackedScene" uid="uid://c0uv31a312438" path="res://scenes/caracter.tscn" id="3_sugp2"]
-[ext_resource type="PackedScene" uid="uid://dei1qjvuiscm3" path="res://scenes/spawner.tscn" id="5_tbgi4"]
+[ext_resource type="Script" path="res://scripts/health_bar.gd" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://be14kn7sk0hlh" path="res://scenes/caracter.tscn" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://bkm3gue0objjw" path="res://scenes/enemy.tscn" id="4_jyhfs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0wfyh"]
 size = Vector2(83, 1097.5)
@@ -17,7 +17,7 @@ size = Vector2(83, 1096.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tbgi4"]
 size = Vector2(83, 1880)
 
-[node name="Main" type="Node2D" unique_id=1322892608 groups=["player"]]
+[node name="Main" type="Node2D" unique_id=1322892608]
 
 [node name="Walls" type="Node2D" parent="." unique_id=1653649959]
 
@@ -80,15 +80,9 @@ offset_bottom = 516.0
 text = "HEALTH DOWN"
 
 [node name="Player" parent="." unique_id=2109339258 instance=ExtResource("3_sugp2")]
-position = Vector2(-77, 113)
+position = Vector2(-557, 286)
 
-[node name="enemy spawner" type="Node" parent="." unique_id=1714785594]
-
-[node name="spawner" parent="enemy spawner" unique_id=1486402798 node_paths=PackedStringArray("target") instance=ExtResource("5_tbgi4")]
-position = Vector2(-677, -286)
-target = NodePath("../../Player")
-
-[node name="spawner2" parent="enemy spawner" unique_id=667809087 instance=ExtResource("5_tbgi4")]
-position = Vector2(566, -259)
+[node name="enemy" parent="." unique_id=945367176 instance=ExtResource("4_jyhfs")]
+position = Vector2(-507, -247)
 
 [connection signal="pressed" from="ProgressBar/Button" to="ProgressBar" method="_on_button_pressed"]
