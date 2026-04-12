@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://b68r3gapq3rxb"]
 
 [ext_resource type="Texture2D" uid="uid://bhew6os5cstku" path="res://icon.svg" id="1_o5qli"]
-[ext_resource type="Script" path="res://scripts/health_bar.gd" id="2_0wfyh"]
+[ext_resource type="Script" uid="uid://r1php38s7w37" path="res://scripts/health_bar.gd" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://be14kn7sk0hlh" path="res://scenes/caracter.tscn" id="3_sugp2"]
-[ext_resource type="PackedScene" uid="uid://bkm3gue0objjw" path="res://scenes/enemy.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://dei1qjvuiscm3" path="res://scenes/spawner.tscn" id="4_jyhfs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0wfyh"]
 size = Vector2(83, 1097.5)
@@ -82,7 +82,10 @@ text = "HEALTH DOWN"
 [node name="Player" parent="." unique_id=2109339258 instance=ExtResource("3_sugp2")]
 position = Vector2(-557, 286)
 
-[node name="enemy" parent="." unique_id=945367176 instance=ExtResource("4_jyhfs")]
-position = Vector2(-507, -247)
+[node name="spawner" parent="." unique_id=1486402798 instance=ExtResource("4_jyhfs")]
+position = Vector2(-680, -227)
+
+[node name="spawner2" parent="." unique_id=1953423556 instance=ExtResource("4_jyhfs")]
+position = Vector2(564, -244)
 
 [connection signal="pressed" from="ProgressBar/Button" to="ProgressBar" method="_on_button_pressed"]
