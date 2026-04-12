@@ -6,6 +6,8 @@ const RUN_SPEED = 600.0
 const ACCELERATION = 1200.0
 const FRICTION = 750.0
 
+var hp = 100
+
 #dash
 const DASH_SPEED = 1000.0
 const DASH_TIME = 0.2

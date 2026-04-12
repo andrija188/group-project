@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c0uv31a312438"]
+[gd_scene format=3 uid="uid://calr51m43ki8d"]
 
 [ext_resource type="Script" uid="uid://c6v6dcckuovlp" path="res://scripts/moving.gd" id="1_0p76x"]
 [ext_resource type="Texture2D" uid="uid://bhew6os5cstku" path="res://icon.svg" id="1_7krdm"]
@@ -16,8 +16,8 @@ bullet = ExtResource("2_431fb")
 position = Vector2(-7, -1)
 texture = ExtResource("1_7krdm")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=917012071]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=762222839]
+
+[node name="hitbox" type="CollisionShape2D" parent="." unique_id=1546986808]
 position = Vector2(-7, -1)
 shape = SubResource("RectangleShape2D_g2els")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=762222839]
