@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://be14kn7sk0hlh"]
+[gd_scene format=3 uid="uid://daefpr1bpmjon"]
 
-[ext_resource type="Script" uid="uid://ca5hqnw6qy5kb" path="res://scripts/moving.gd" id="1_0p76x"]
+[ext_resource type="Script" path="res://scripts/moving.gd" id="1_0p76x"]
 [ext_resource type="Texture2D" uid="uid://bhew6os5cstku" path="res://icon.svg" id="1_7krdm"]
 [ext_resource type="PackedScene" uid="uid://c0cheyyw803pc" path="res://scenes/bullet.tscn" id="2_431fb"]
 
@@ -18,5 +18,3 @@ texture = ExtResource("1_7krdm")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=917012071]
 position = Vector2(-7, -1)
 shape = SubResource("RectangleShape2D_g2els")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=762222839]
