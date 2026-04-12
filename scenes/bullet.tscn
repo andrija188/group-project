@@ -7,7 +7,7 @@
 radius = 11.0
 height = 58.0
 
-[node name="bullet" type="Area2D" unique_id=359671405]
+[node name="bullet" type="Area2D" unique_id=359671405 groups=["bullet"]]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_y25gk")
 

@@ -29,9 +29,9 @@ sprite_frames = SubResource("SpriteFrames_7p1mj")
 [node name="hitbox" type="CollisionShape2D" parent="." unique_id=833881889]
 shape = SubResource("RectangleShape2D_7p1mj")
 
-[node name="hurtbox" type="Area2D" parent="." unique_id=2067953189 groups=["bullet"]]
+[node name="hurtbox" type="Area2D" parent="." unique_id=2067953189]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=393073996]
 shape = SubResource("CircleShape2D_md0e3")
 
-[connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]
+[connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]
