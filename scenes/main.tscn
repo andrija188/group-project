@@ -80,13 +80,15 @@ offset_bottom = 516.0
 text = "HEALTH DOWN"
 
 [node name="Player" parent="." unique_id=2109339258 instance=ExtResource("3_sugp2")]
-position = Vector2(-114, 99)
+position = Vector2(-77, 113)
 
-[node name="spawner" parent="." unique_id=1486402798 node_paths=PackedStringArray("target") instance=ExtResource("5_tbgi4")]
-position = Vector2(-668, -253)
-target = NodePath("../Player")
+[node name="enemy spawner" type="Node" parent="." unique_id=1714785594]
 
-[node name="spawner2" parent="." unique_id=667809087 instance=ExtResource("5_tbgi4")]
-position = Vector2(437, -220)
+[node name="spawner" parent="enemy spawner" unique_id=1486402798 node_paths=PackedStringArray("target") instance=ExtResource("5_tbgi4")]
+position = Vector2(-677, -286)
+target = NodePath("../../Player")
+
+[node name="spawner2" parent="enemy spawner" unique_id=667809087 instance=ExtResource("5_tbgi4")]
+position = Vector2(566, -259)
 
 [connection signal="pressed" from="ProgressBar/Button" to="ProgressBar" method="_on_button_pressed"]
