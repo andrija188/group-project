@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@onready var player = $"../player for now"
+@onready var player = $"../Player"
 var speed: float = 100.0
 var hp = 20
 
