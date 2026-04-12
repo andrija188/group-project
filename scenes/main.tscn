@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://d0lvamea4p23w"]
 
 [ext_resource type="Texture2D" uid="uid://bhew6os5cstku" path="res://icon.svg" id="1_o5qli"]
-[ext_resource type="Script" path="res://scripts/health_bar.gd" id="2_0wfyh"]
+[ext_resource type="Script" uid="uid://r1php38s7w37" path="res://scripts/health_bar.gd" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://c0uv31a312438" path="res://scenes/caracter.tscn" id="3_sugp2"]
-[ext_resource type="PackedScene" path="res://scenes/spawner.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://dei1qjvuiscm3" path="res://scenes/spawner.tscn" id="4_jyhfs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sugp2"]
 size = Vector2(1936, 70)
@@ -72,7 +72,7 @@ scale = Vector2(15.484375, 0.8593751)
 texture = ExtResource("1_o5qli")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1338513434]
-zoom = Vector2(0.75, 0.75)
+zoom = Vector2(0.5, 0.5)
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1857761861]
 offset_left = -282.0

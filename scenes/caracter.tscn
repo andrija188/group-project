@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c0uv31a312438"]
 
-[ext_resource type="Script" path="res://scripts/moving.gd" id="1_0p76x"]
+[ext_resource type="Script" uid="uid://c6v6dcckuovlp" path="res://scripts/moving.gd" id="1_0p76x"]
 [ext_resource type="Texture2D" uid="uid://bhew6os5cstku" path="res://icon.svg" id="1_7krdm"]
 [ext_resource type="PackedScene" uid="uid://c0cheyyw803pc" path="res://scenes/bullet.tscn" id="2_431fb"]
 
@@ -8,6 +8,7 @@
 size = Vector2(128, 128)
 
 [node name="Player" type="CharacterBody2D" unique_id=50151612]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_0p76x")
 bullet = ExtResource("2_431fb")
 
