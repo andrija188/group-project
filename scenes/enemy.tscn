@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bi43jfas7aoe6"]
 
 [ext_resource type="Texture2D" uid="uid://bhew6os5cstku" path="res://icon.svg" id="1_7p1mj"]
-[ext_resource type="Script" path="res://scripts/enemy.gd" id="3_5uy6h"]
+[ext_resource type="Script" uid="uid://phpn5skhdjh4" path="res://scripts/enemy.gd" id="3_5uy6h"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7p1mj"]
 animations = [{
@@ -17,13 +17,19 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7p1mj"]
 size = Vector2(113, 118)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_md0e3"]
+radius = 68.0294
+
 [node name="enemy" type="CharacterBody2D" unique_id=762476538]
 script = ExtResource("3_5uy6h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1416633281]
-position = Vector2(728, 689)
 sprite_frames = SubResource("SpriteFrames_7p1mj")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=833881889]
-position = Vector2(728, 689)
+[node name="hitbox" type="CollisionShape2D" parent="." unique_id=833881889]
 shape = SubResource("RectangleShape2D_7p1mj")
+
+[node name="hurtbox" type="Area2D" parent="." unique_id=2067953189]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=393073996]
+shape = SubResource("CircleShape2D_md0e3")
