@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var player = $"../player for now"
 var speed: float = 100.0
+var hp = 20
 
 var follow: = true
 
@@ -14,3 +15,7 @@ func _physics_process(delta: float) -> void:
 		var direction = (player.global_position-global_position).normalized()
 		velocity = lerp(velocity, direction * speed, 60*delta)
 	move_and_slide()
+
+func _on_hurtbox_body_entered(body: Node2D) -> void:
+	if body.is_in_group("bullets"):
+		hp = hp-1

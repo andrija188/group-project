@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bi43jfas7aoe6"]
+[gd_scene format=3 uid="uid://g17yopyilud"]
 
 [ext_resource type="Texture2D" uid="uid://bhew6os5cstku" path="res://icon.svg" id="1_7p1mj"]
 [ext_resource type="Script" uid="uid://phpn5skhdjh4" path="res://scripts/enemy.gd" id="3_5uy6h"]
@@ -33,3 +33,5 @@ shape = SubResource("RectangleShape2D_7p1mj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=393073996]
 shape = SubResource("CircleShape2D_md0e3")
+
+[connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]
