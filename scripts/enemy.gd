@@ -1,13 +1,16 @@
 extends CharacterBody2D
 
-@onready var player = $"../player for now"
+var player: Node2D
 var speed: float = 100.0
 var hp = 20
 
 var follow: = true
 
+func _ready() -> void:
+	player = get_tree().get_first_node_in_group("player")
+
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.name == "player for now":
+	if body.is_in_group("player"):
 		follow = true
 
 func _physics_process(delta: float) -> void:
