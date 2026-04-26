@@ -26,7 +26,7 @@ var can_shoot = true
 
 func _ready() -> void:
 	bullet_direction = global_rotation
-
+	set_health_label()
 func shoot():
 	if not can_shoot:
 		return
@@ -93,3 +93,22 @@ func _physics_process(delta: float) -> void:
 		shoot()
 	
 	move_and_slide()
+
+
+var max_health = 20
+var current_health = max_health
+
+@onready var health_label = $healthlabel
+@onready var healthbar = $ProgressBar
+
+
+func set_health_label():
+	health_label.text = "health: " + str(current_health)
+
+func take_damage(damage_amount):
+	current_health -= damage_amount
+	if current_health <= 0:
+		queue_free()
+	
+	healthbar.value = current_health 
+	

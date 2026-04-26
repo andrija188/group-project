@@ -31,3 +31,12 @@ func die():
 func _on_hurtbox_area_entered(area):
 	if area.is_in_group("bullet"):
 		hp -= 1
+
+var damage_amount = 5 
+
+
+func _on_hurtbox_body_entered(body):
+	print("kurac")
+	
+	if body.is_in_group("player"):
+		body.take_damage(damage_amount)

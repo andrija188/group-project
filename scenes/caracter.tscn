@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://calr51m43ki8d"]
+[gd_scene format=3 uid="uid://d0in5wr4sdh3k"]
 
 [ext_resource type="Script" uid="uid://c6v6dcckuovlp" path="res://scripts/moving.gd" id="1_0p76x"]
 [ext_resource type="Texture2D" uid="uid://bhew6os5cstku" path="res://icon.svg" id="1_7krdm"]
@@ -7,8 +7,17 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
 size = Vector2(128, 128)
 
+[sub_resource type="GDScript" id="GDScript_431fb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_431fb"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5tin7"]
+bg_color = Color(0, 1, 0, 1)
+
 [node name="Player" type="CharacterBody2D" unique_id=50151612]
 scale = Vector2(0.5, 0.5)
+collision_mask = 0
 script = ExtResource("1_0p76x")
 bullet = ExtResource("2_431fb")
 
@@ -21,3 +30,25 @@ texture = ExtResource("1_7krdm")
 [node name="hitbox" type="CollisionShape2D" parent="." unique_id=1546986808]
 position = Vector2(-7, -1)
 shape = SubResource("RectangleShape2D_g2els")
+
+[node name="healthlabel" type="Label" parent="." unique_id=747544363]
+visible = false
+offset_left = -80.0
+offset_top = -112.0
+offset_right = 76.0
+offset_bottom = -72.0
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+script = SubResource("GDScript_431fb")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=651034074]
+offset_left = -76.0
+offset_top = -96.0
+offset_right = 68.0
+offset_bottom = -69.0
+theme_override_styles/background = SubResource("StyleBoxFlat_431fb")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5tin7")
+max_value = 20.0
+step = 5.0
+fill_mode = 1
+show_percentage = false
