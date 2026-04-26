@@ -2,7 +2,47 @@
 
 [ext_resource type="Texture2D" uid="uid://bhew6os5cstku" path="res://icon.svg" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://calr51m43ki8d" path="res://scenes/caracter.tscn" id="3_sugp2"]
-[ext_resource type="PackedScene" path="res://scenes/spawner.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://dei1qjvuiscm3" path="res://scenes/spawner.tscn" id="4_jyhfs"]
+
+[sub_resource type="GDScript" id="GDScript_sugp2"]
+script/source = "extends Node2D
+
+var total_kills : int = 0
+var current_kills : int = 0
+var kills_to_freeze : int = 5 
+
+func _ready():
+	process_mode = Node.PROCESS_MODE_ALWAYS
+	postavi_spawner_na_pauziranje()
+	print(\"Sistem spreman. Prvo zaledjivanje na 5 ubistava.\")
+
+func _on_enemy_killed():
+	total_kills += 1
+	current_kills += 1
+	print(\"Ubistava do zaledjivanja: \", current_kills, \"/\", kills_to_freeze)
+	
+	if current_kills >= kills_to_freeze:
+		freeze_system()
+
+func freeze_system():
+	print(\"--- SVE ZALEDJENO! (3 sekunde) ---\")
+	get_tree().paused = true
+	
+	# Tajmer koji radi tokom pauze
+	await get_tree().create_timer(3.0, true, false, true).timeout
+	
+	unfreeze_system()
+
+func unfreeze_system():
+	print(\"--- IGRA SE NASTAVLJA! ---\")
+	get_tree().paused = false
+	current_kills = 0 
+
+func postavi_spawner_na_pauziranje():
+	for child in get_children():
+		if \"spawner\" in child.name.to_lower():
+			child.process_mode = Node.PROCESS_MODE_PAUSABLE
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sugp2"]
 size = Vector2(1936, 70)
@@ -17,6 +57,7 @@ size = Vector2(1158, 70)
 size = Vector2(1927, 70)
 
 [node name="Main" type="Node2D" unique_id=1322892608]
+script = SubResource("GDScript_sugp2")
 
 [node name="Walls" type="Node2D" parent="." unique_id=1653649959]
 

@@ -1,27 +1,33 @@
 extends CharacterBody2D
 
+signal died
+
 var player: Node2D
 var speed: float = 100.0
 var hp = 5
-
 var follow = true
 
-func _ready() -> void:
+func _ready():
 	player = get_tree().get_first_node_in_group("player")
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player"):
-		follow = true
-
-func _physics_process(delta: float) -> void:
-	if follow:
-		var direction = (player.global_position-global_position).normalized()
-		velocity = lerp(velocity, direction * speed, 60*delta)
-	move_and_slide()
 	
-	if hp == 0:
-		queue_free()
+	# Povezivanje sa Main skriptom
+	var main_node = get_tree().current_scene
+	if main_node and main_node.has_method("_on_enemy_killed"):
+		died.connect(main_node._on_enemy_killed)
 
-func _on_hurtbox_area_entered(area: Area2D) -> void:
+func _physics_process(_delta):
+	if follow and is_instance_valid(player):
+		var direction = (player.global_position - global_position).normalized()
+		velocity = velocity.lerp(direction * speed, 0.1)
+		move_and_slide()
+	
+	if hp <= 0:
+		die()
+
+func die():
+	died.emit()
+	queue_free()
+
+func _on_hurtbox_area_entered(area):
 	if area.is_in_group("bullet"):
-		hp = hp-1
+		hp -= 1
