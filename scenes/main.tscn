@@ -42,6 +42,7 @@ func postavi_spawner_na_pauziranje():
 	for child in get_children():
 		if \"spawner\" in child.name.to_lower():
 			child.process_mode = Node.PROCESS_MODE_PAUSABLE
+	#aura
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sugp2"]
